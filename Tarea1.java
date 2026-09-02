@@ -61,10 +61,6 @@ public class Tarea1{
         return mensaje;
     }
 
-    private static int getInt(int contadorArreglo) {
-        return contadorArreglo;
-    }
-
     public static int[] organizarNumeroBurbuja(int[] arreglo){
 
         for(int i = 0; i<arreglo.length; i++){
