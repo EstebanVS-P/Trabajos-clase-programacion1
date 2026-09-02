@@ -47,18 +47,22 @@ public class Tarea1{
             }
         }
         for(int e = 0; e<contadorArreglo.length;e++){
-            if(contadorArreglo[e]==mayor){
+            if(contadorArreglo[e] == mayor && arreglo[e]!= arreglo[guardar]){
                 contadorRepetidos++;
             }
         }
         if(mayor==1){
             mensaje= "En tu arreglo no se encuentran valores repetidos.";
         }else if(contadorRepetidos>1){
-            mensaje= "En tu arreglo hay dos numeros que se repiten la misma cantidad de veces, ambos repitiendose "+mayor+" veces.";
+            mensaje= "En tu arreglo hay numeros que se repiten la misma cantidad de veces, estos repitiendose "+mayor+" veces.";
         }else{
             mensaje="El numero que mas se repite de tu arreglo es el "+arreglo[guardar]+" que se repite "+mayor+" veces.";
         }
         return mensaje;
+    }
+
+    private static int getInt(int contadorArreglo) {
+        return contadorArreglo;
     }
 
     public static int[] organizarNumeroBurbuja(int[] arreglo){
