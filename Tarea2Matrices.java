@@ -18,32 +18,63 @@ public class Tarea2Matrices {
                 matriz1[i][e] = numeros;
             }
         }
-        mostrarMatriz(matriz1);
 
-        int sumaMatriz = sumasMatriz(matriz1, filas, columnas);
-        System.out.println("La suma de todos los numeros de tu matriz da: " + sumaMatriz +
-                "\n");
+        int opcion = 0;
 
-        int[][] matriz2 = encontrarDiagnalPrincipal(matriz1, filas, columnas);
-        mostrarMatriz2(matriz2);
-        int suma = sumaDiagonalMatriz(matriz2, filas, columnas);
-        System.out.println("La suma de la diagonal principal es: " + suma);
+        do{
+            opcion = Repositorio.ingresarEntero("\nEn este menu podras eleguir entre: " +
+                                                        "\n1. Mostrarte tu matriz." +
+                                                        "\n2. Sumar todos los numeros de tu matriz." +
+                                                        "\n3. Mostrarte la suma de la diagonal principal de tu matriz." +
+                                                        "\n4. Mostrarte la suma de la diagonal secundaria de tu matriz." +
+                                                        "\n5. Mostrarte la suma de las diagonales de tu matriz. " +
+                                                        "\n6. Mostrarte el dibujo de un cuadro en una matriz." +
+                                                        "\n7. Mostrarte una matriz espiral que empiece con el numero elegido anteriormente." +
+                                                        "\n8. Salir."+
+                                                        "\nIngresa la opcion: ");
 
-        int[][] matriz3 = encontarDiagonalSecundaria(matriz1, filas, columnas);
-        mostrarMatriz3(matriz3);
-        int sumaSecundaria = sumaDiagonalSecundariaMatriz(matriz1, filas, columnas, matriz3);
-        System.out.println("La suma de la diagonal secundaria es: " + sumaSecundaria);
+            switch (opcion) {
 
-        int[][] matriz4 = matrizDiagonales(matriz1, filas, columnas);
-        mostrarMatriz4(matriz4);
-        int suma4 = sumaDiagonales(matriz1, filas, columnas, matriz4);
-        System.out.println("La suma de las diagonales es: " + suma4);
+                 case 1: mostrarMatriz(matriz1);
+                         break;
 
-        int[][] matrizEspiral= matrizEspiral(filas,columnas,numero);
-        mostrarMatrizEspiral(matrizEspiral);
+                 case 2: int sumaMatriz = sumasMatriz(matriz1, filas, columnas);
+                         System.out.println("La suma de todos los numeros de tu matriz da: " + sumaMatriz);
+                         break;
 
-        int[][] matrizCuadro = dibujarCuadro(filas,columnas);
-        mostrarMatrizCuadro(matrizCuadro);
+                 case 3: int[][] matriz2 = encontrarDiagnalPrincipal(matriz1, filas, columnas);
+                         mostrarMatriz2(matriz2);
+                         int suma = sumaDiagonalMatriz(matriz2, filas, columnas);
+                         System.out.println("La suma de la diagonal principal es: " + suma);
+                         break;
+
+                 case 4: int[][] matriz3 = encontarDiagonalSecundaria(matriz1, filas, columnas);
+                         mostrarMatriz3(matriz3);
+                         int sumaSecundaria = sumaDiagonalSecundariaMatriz(matriz1, filas, columnas, matriz3);
+                         System.out.println("La suma de la diagonal secundaria es: " + sumaSecundaria);
+                         break;
+
+                 case 5: int[][] matriz4 = matrizDiagonales(matriz1, filas, columnas);
+                         mostrarMatriz4(matriz4);
+                         int suma4 = sumaDiagonales(matriz1, filas, columnas, matriz4);
+                         System.out.println("La suma de las diagonales es: " + suma4);
+                         break;
+
+                 case 6: int[][] matrizCuadro = dibujarCuadro(filas, columnas);
+                         mostrarMatrizCuadro(matrizCuadro);
+                         break;
+
+                 case 7: int[][] matrizEspiral = matrizEspiral(filas, columnas, numero);
+                         mostrarMatrizEspiral(matrizEspiral);
+                         break;
+
+                 case 8: System.out.println("Adios.");
+                         break;
+
+                 default: System.out.println("Opcion no valida");
+                          break;
+            }
+        }while(opcion!=8);
     }
 
     public static void mostrarMatriz(int[][] matriz1) {
