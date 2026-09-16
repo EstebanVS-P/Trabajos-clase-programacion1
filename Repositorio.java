@@ -80,4 +80,16 @@ public class Repositorio {
 
         return esVocal;
     }
+    public static float ingresarDecimalFloat(String mensaje) {
+        Scanner in = new Scanner(System.in);
+        System.out.print(mensaje);
+        float numero = in.nextFloat();
+        return numero;
+    }
+    public static byte ingresarByte(String mensaje) {
+        Scanner in = new Scanner(System.in);
+        System.out.print(mensaje);
+        byte numero = in.nextByte();
+        return numero;
+    }
 }
