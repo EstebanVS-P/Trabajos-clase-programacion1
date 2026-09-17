@@ -5,7 +5,7 @@ public class Curso {
     private String nombre;
     private String codigo;
 
-    private ArrayList<Estudiante> estudiante;
+    private ArrayList<Estudiante>estudiante;
 
     public Curso(String nombre, String codigo) {
 
@@ -13,5 +13,6 @@ public class Curso {
         this.codigo = codigo;
 
         estudiante = new ArrayList<>();
+
     }
 }
